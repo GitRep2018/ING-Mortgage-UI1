@@ -1,21 +1,55 @@
 pipeline {
-    agent any
+
+    agent any 
+
+    tools {nodejs "NODEJS"} // NODEJS is the variable which is mentioned in global tool configurations
 
     stages {
-        stage('Build') {
+
+        stage('checkout') { 
+
             steps {
-                echo 'Building..'
+
+                git url:'https://github.com/GitRep2018/ING-Mortgage-UI1.git'
+
             }
+
         }
-        stage('Test') {
+
+        
+          stage('Build') { 
+
             steps {
-                echo 'Testing..'
+
+                sh '''
+
+                npm install
+
+                npm run build
+
+            '''
+
             }
+
         }
-        stage('Deploy') {
+  stage('Deploy') { 
+
             steps {
-                echo 'Deploying....'
+
+                sh '''
+
+                cd /var/lib/jenkins/workspace/pipeline
+
+                chmod -R 777 build/
+
+                cp -rf build/ /opt/apache-tomcat-9.0.26/webapps/
+
+            '''
+
             }
+
         }
+
     }
+
 }
