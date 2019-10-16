@@ -22,10 +22,8 @@ pipeline {
             steps {
 
                 sh '''
-
-                npm install
-
-                npm run build
+              npm install
+              ng build --base-href="./"
 
             '''
 
