@@ -36,9 +36,9 @@ pipeline {
 
                 cd /var/lib/jenkins/workspace/pipeline/dist
 
-                chmod -R 777 build/
+                chmod -R 777 MockUseCase
 
-                cp -rf build/ /opt/apache-tomcat-9.0.26/webapps/
+                cp -rf MockUseCase /opt/apache-tomcat-9.0.26/webapps/
 
             '''
 
