@@ -34,7 +34,7 @@ pipeline {
 
                 sh '''
 
-                cd /var/lib/jenkins/workspace/pipeline
+                cd /var/lib/jenkins/workspace/pipeline/dist
 
                 chmod -R 777 build/
 
