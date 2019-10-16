@@ -2,8 +2,6 @@ pipeline {
 
     agent any 
 
-    tools {nodejs "NODEJS"} // NODEJS is the variable which is mentioned in global tool configurations
-
     stages {
 
         stage('checkout') { 
