@@ -7,8 +7,9 @@ pipeline {
         stage('checkout') { 
 
             steps {
-
-                git url:'https://github.com/GitRep2018/ING-Mortgage-UI1.git'
+                
+                git branch: 'dev', url: 'https://github.com/GitRep2018/ING-Mortgage-UI1.git'
+                //git url:'https://github.com/GitRep2018/ING-Mortgage-UI1.git'
 
             }
 
